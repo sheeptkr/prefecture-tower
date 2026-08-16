@@ -45,7 +45,7 @@ app.innerHTML = `
   <dialog id="info-dialog">
     <form method="dialog"><button class="dialog-close" aria-label="閉じる">×</button></form>
     <div class="dialog-body">
-      <p class="eyebrow">ABOUT THIS GAME</p>
+      <p class="eyebrow">目指せ47都道府県！</p>
       <h1>都道府県タワー</h1>
       <p>47都道府県を全国共通のランベルト正積方位図法・同一縮尺で表現した、1人用の物理タワーゲームです。県ごとの個別拡大はしていません。</p>
       <h2>データと加工</h2>

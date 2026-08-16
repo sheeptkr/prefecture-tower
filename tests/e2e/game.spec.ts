@@ -18,6 +18,7 @@ test('touch controls and information dialog are usable', async ({ page }) => {
   await expect(drop).toBeVisible();
   await page.locator('#info-button').click();
   await expect(page.locator('#info-dialog')).toBeVisible();
+  await expect(page.locator('#info-dialog .eyebrow')).toHaveText('目指せ47都道府県！');
   await expect(page.locator('#info-dialog')).toContainText('国土数値情報');
   await page.locator('.dialog-close').click();
   await drop.click();
