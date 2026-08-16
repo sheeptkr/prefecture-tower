@@ -23,3 +23,22 @@ test('touch controls and information dialog are usable', async ({ page }) => {
   await drop.click();
   await expect(page.locator('#phase-label')).not.toHaveText('配置中');
 });
+
+test('touch controls prevent iOS-style text selection and callouts', async ({ page }) => {
+  await page.goto('?seed=47');
+  const left = page.locator('[data-action="left"]');
+  const selectionStyles = await left.evaluate((element) => {
+    const styles = getComputedStyle(element);
+    return {
+      userSelect: styles.userSelect,
+      webkitUserSelect: styles.webkitUserSelect,
+    };
+  });
+  expect(selectionStyles).toEqual({ userSelect: 'none', webkitUserSelect: 'none' });
+  const selectionPrevented = await left.evaluate((element) => {
+    const event = new Event('selectstart', { bubbles: true, cancelable: true });
+    element.dispatchEvent(event);
+    return event.defaultPrevented;
+  });
+  expect(selectionPrevented).toBe(true);
+});

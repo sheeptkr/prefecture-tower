@@ -37,8 +37,9 @@ button { color: inherit; }
 .next-piece b { max-width: 90px; overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .seed-label { margin-top: 5px; color: rgba(185, 216, 235, .5); font-size: 8px; letter-spacing: .13em; text-align: center; }
 
-.touch-controls { position: fixed; z-index: 3; right: 50%; bottom: max(18px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(5, minmax(54px, 70px)); gap: 7px; transform: translateX(50%); }
-.touch-controls button { display: grid; place-items: center; min-height: 62px; border: 1px solid rgba(218, 240, 255, .22); border-radius: 18px; background: rgba(13, 32, 51, .8); box-shadow: 0 8px 24px rgba(0, 0, 0, .22); cursor: pointer; font-size: 24px; font-weight: 800; backdrop-filter: blur(12px); user-select: none; -webkit-tap-highlight-color: transparent; }
+.touch-controls { position: fixed; z-index: 3; right: 50%; bottom: max(18px, env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(5, minmax(54px, 70px)); gap: 7px; transform: translateX(50%); touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.touch-controls * { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.touch-controls button { display: grid; place-items: center; min-height: 62px; border: 1px solid rgba(218, 240, 255, .22); border-radius: 18px; background: rgba(13, 32, 51, .8); box-shadow: 0 8px 24px rgba(0, 0, 0, .22); cursor: pointer; font-size: 24px; font-weight: 800; backdrop-filter: blur(12px); -webkit-tap-highlight-color: transparent; }
 .touch-controls button:active { transform: translateY(2px); background: rgba(47, 85, 112, .92); }
 .touch-controls small { color: #9ab9ce; font-size: 8px; font-weight: 700; }
 .touch-controls .drop-button { border-color: rgba(255, 225, 116, .72); background: linear-gradient(145deg, rgba(242, 191, 74, .96), rgba(238, 107, 74, .96)); color: #15273a; }

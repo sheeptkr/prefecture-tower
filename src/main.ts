@@ -109,6 +109,10 @@ async function start(): Promise<void> {
     if (action === 'drop') game.drop();
   };
 
+  const touchControls = requiredElement<HTMLElement>('.touch-controls');
+  touchControls.addEventListener('touchstart', (event) => event.preventDefault(), { passive: false });
+  touchControls.addEventListener('selectstart', (event) => event.preventDefault());
+  touchControls.addEventListener('contextmenu', (event) => event.preventDefault());
   document.querySelectorAll<HTMLButtonElement>('[data-action]').forEach((button) => {
     button.addEventListener('pointerdown', (event) => {
       event.preventDefault();
