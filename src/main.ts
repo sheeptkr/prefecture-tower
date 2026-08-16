@@ -1,5 +1,6 @@
 import './style.css';
 import { PrefectureTowerGame } from './game';
+import { beginRepeatedAction } from './hold-repeat';
 import { normalizeSeed } from './random';
 import { GameRenderer } from './renderer';
 import type { GamePhase, PrefectureAssetCollection } from './types';
@@ -114,10 +115,21 @@ async function start(): Promise<void> {
   touchControls.addEventListener('selectstart', (event) => event.preventDefault());
   touchControls.addEventListener('contextmenu', (event) => event.preventDefault());
   document.querySelectorAll<HTMLButtonElement>('[data-action]').forEach((button) => {
+    let stopRepeating = (): void => undefined;
     button.addEventListener('pointerdown', (event) => {
       event.preventDefault();
-      act(button.dataset.action ?? '');
+      stopRepeating();
+      const action = button.dataset.action ?? '';
+      stopRepeating = beginRepeatedAction(() => act(action), action !== 'drop');
+      button.setPointerCapture(event.pointerId);
     });
+    const stop = (): void => {
+      stopRepeating();
+      stopRepeating = (): void => undefined;
+    };
+    button.addEventListener('pointerup', stop);
+    button.addEventListener('pointercancel', stop);
+    button.addEventListener('lostpointercapture', stop);
   });
   window.addEventListener('keydown', (event) => {
     const key = event.key.toLowerCase();
