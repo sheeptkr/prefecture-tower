@@ -15,6 +15,17 @@ export const SOURCE_REVISION = '58c561b557eab3a08ee7aa17b6837bcd789cdf43';
 export const SOURCE_REPOSITORY = 'https://github.com/ricewin/simplify-japan-geojson';
 export const PROJECTION = '+proj=laea +lat_0=36 +lon_0=138 +datum=WGS84 +units=km +no_defs';
 
+export const BATTLE_TURN_TIME_MS = 10_000;
+export const BATTLE_ATTACK_TIME_MS = 5_000;
+export const BATTLE_ATTACK_REVEAL_MS = 500;
+export const BATTLE_RECONNECT_GRACE_MS = 30_000;
+export const BATTLE_PREFECTURE_ATTACK_START = 10;
+export const BATTLE_PREFECTURE_ATTACK_INTERVAL = 5;
+export const BATTLE_ROOM_ID_LENGTH = 6;
+export const BATTLE_ROOM_TTL_MS = 60 * 60 * 1000;
+export const BATTLE_ATTACK_NAME = '県送り';
+export const BATTLE_PLATFORM_WIDTH_SCALE = 0.5;
+
 export const PREFECTURES = [
   ['01', '北海道', 'Hokkaido', 'hokkaido'],
   ['02', '青森県', 'Aomori', 'tohoku'], ['03', '岩手県', 'Iwate', 'tohoku'],

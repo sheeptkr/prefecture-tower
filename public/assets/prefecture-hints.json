@@ -1,0 +1,1435 @@
+{
+  "schemaVersion": 2,
+  "generatedFrom": "curated-local-trivia-and-rankings-v3",
+  "records": [
+    {
+      "prefectureCode": "01",
+      "facts": [
+        {
+          "id": "01_food_1",
+          "category": "food",
+          "text": "じゃがいもをつぶして焼く「いももち」",
+          "difficulty": 3
+        },
+        {
+          "id": "01_food_2",
+          "category": "food",
+          "text": "塩蔵した魚と野菜を煮る「三平汁」",
+          "difficulty": 4
+        },
+        {
+          "id": "01_food_3",
+          "category": "food",
+          "text": "鮭を主役に味噌仕立てで煮る「石狩鍋」",
+          "difficulty": 3
+        },
+        {
+          "id": "01_food_4",
+          "category": "food",
+          "text": "数の子と昆布を合わせる「松前漬け」",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "02",
+      "facts": [
+        {
+          "id": "02_food_1",
+          "category": "food",
+          "text": "大豆や根菜を細かく刻む精進料理「けの汁」",
+          "difficulty": 4
+        },
+        {
+          "id": "02_food_2",
+          "category": "food",
+          "text": "帆立の貝殻を鍋代わりにする「貝焼き味噌」",
+          "difficulty": 3
+        },
+        {
+          "id": "02_food_3",
+          "category": "food",
+          "text": "ウニとアワビの潮汁を「いちご煮」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "02_food_4",
+          "category": "food",
+          "text": "南部せんべいを割り入れて煮込む汁物がある",
+          "difficulty": 3
+        },
+        {
+          "id": "02_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で1日当たりの睡眠時間が8時間8分と全国最長",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "03",
+      "facts": [
+        {
+          "id": "03_food_1",
+          "category": "food",
+          "text": "小麦粉の生地を手でちぎって汁に入れる「ひっつみ」",
+          "difficulty": 3
+        },
+        {
+          "id": "03_food_2",
+          "category": "food",
+          "text": "くるみと黒砂糖を包む団子汁「まめぶ汁」",
+          "difficulty": 4
+        },
+        {
+          "id": "03_food_3",
+          "category": "food",
+          "text": "蒸しパンに似た郷土菓子を「がんづき」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "03_food_4",
+          "category": "food",
+          "text": "瓜に人参や昆布を詰めて漬ける「金婚漬」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "04",
+      "facts": [
+        {
+          "id": "04_food_1",
+          "category": "food",
+          "text": "曲げずに作る短い麺「白石温麺」",
+          "difficulty": 3
+        },
+        {
+          "id": "04_food_2",
+          "category": "food",
+          "text": "鮭の煮汁で炊いたご飯にイクラをのせる「はらこ飯」",
+          "difficulty": 3
+        },
+        {
+          "id": "04_food_3",
+          "category": "food",
+          "text": "根まで味わう冬の「せり鍋」がある",
+          "difficulty": 3
+        },
+        {
+          "id": "04_food_4",
+          "category": "food",
+          "text": "枝豆をすりつぶした餡を餅にまぶす",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "05",
+      "facts": [
+        {
+          "id": "05_food_1",
+          "category": "food",
+          "text": "燻してから漬ける大根の漬物がある",
+          "difficulty": 3
+        },
+        {
+          "id": "05_culture_2",
+          "category": "culture",
+          "text": "売り子がヘラで盛り付けるカラフルな路上アイス",
+          "difficulty": 3
+        },
+        {
+          "id": "05_food_3",
+          "category": "food",
+          "text": "つぶした米を丸めて鍋に入れる「だまこ鍋」",
+          "difficulty": 4
+        },
+        {
+          "id": "05_food_4",
+          "category": "food",
+          "text": "ハタハタから作る魚醤「しょっつる」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "06",
+      "facts": [
+        {
+          "id": "06_food_1",
+          "category": "food",
+          "text": "刻んだ夏野菜と香味野菜を醤油で和える「だし」",
+          "difficulty": 3
+        },
+        {
+          "id": "06_food_2",
+          "category": "food",
+          "text": "醤油味の丸いこんにゃくを串に刺して食べる",
+          "difficulty": 3
+        },
+        {
+          "id": "06_food_3",
+          "category": "food",
+          "text": "冷たいスープに麺を入れる「冷やしラーメン」発祥の地",
+          "difficulty": 3
+        },
+        {
+          "id": "06_food_4",
+          "category": "food",
+          "text": "納豆や鯖缶をつけだれにする「ひっぱりうどん」",
+          "difficulty": 4
+        },
+        {
+          "id": "06_ranking_5",
+          "category": "ranking",
+          "text": "通勤・通学で自家用車だけを使う割合が全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "07",
+      "facts": [
+        {
+          "id": "07_food_1",
+          "category": "food",
+          "text": "食パンにミルク風味のクリームを塗る「クリームボックス」",
+          "difficulty": 4
+        },
+        {
+          "id": "07_food_2",
+          "category": "food",
+          "text": "餃子を円盤状に並べて焼く食文化がある",
+          "difficulty": 3
+        },
+        {
+          "id": "07_food_3",
+          "category": "food",
+          "text": "細切りのするめと人参を醤油漬けにする",
+          "difficulty": 4
+        },
+        {
+          "id": "07_food_4",
+          "category": "food",
+          "text": "干し貝柱でだしを取る小さな汁物「こづゆ」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "08",
+      "facts": [
+        {
+          "id": "08_food_1",
+          "category": "food",
+          "text": "レバー入りの甘辛い餡を麺にかける「スタミナラーメン」",
+          "difficulty": 4
+        },
+        {
+          "id": "08_food_2",
+          "category": "food",
+          "text": "干したさつまいもの生産が特に盛ん",
+          "difficulty": 3
+        },
+        {
+          "id": "08_food_3",
+          "category": "food",
+          "text": "切り干し大根を混ぜた納豆「そぼろ納豆」",
+          "difficulty": 4
+        },
+        {
+          "id": "08_food_4",
+          "category": "food",
+          "text": "つけ汁ではなく温かい汁で食べる「けんちんそば」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "09",
+      "facts": [
+        {
+          "id": "09_food_1",
+          "category": "food",
+          "text": "鮭の頭・大豆・根菜を酒粕で煮る「しもつかれ」",
+          "difficulty": 4
+        },
+        {
+          "id": "09_food_2",
+          "category": "food",
+          "text": "耳の形に折った麺を正月に食べる「耳うどん」",
+          "difficulty": 4
+        },
+        {
+          "id": "09_food_3",
+          "category": "food",
+          "text": "乳茸のだしで味わう「ちたけそば」",
+          "difficulty": 4
+        },
+        {
+          "id": "09_food_4",
+          "category": "food",
+          "text": "幅広の青竹で麺を打つラーメン文化がある",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "10",
+      "facts": [
+        {
+          "id": "10_food_1",
+          "category": "food",
+          "text": "串に刺した素饅頭へ甘い味噌だれを塗って焼く",
+          "difficulty": 3
+        },
+        {
+          "id": "10_food_2",
+          "category": "food",
+          "text": "帯のように幅広い「ひもかわうどん」がある",
+          "difficulty": 3
+        },
+        {
+          "id": "10_food_3",
+          "category": "food",
+          "text": "小麦の幅広麺と野菜を煮込む「おっきりこみ」",
+          "difficulty": 4
+        },
+        {
+          "id": "10_culture_4",
+          "category": "culture",
+          "text": "県内の名物や人物を詠む「上毛かるた」が定番",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "11",
+      "facts": [
+        {
+          "id": "11_food_1",
+          "category": "food",
+          "text": "衣をつけたおからコロッケを「ゼリーフライ」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "11_food_2",
+          "category": "food",
+          "text": "きな粉と水飴を使う棒状の菓子「五家宝」",
+          "difficulty": 4
+        },
+        {
+          "id": "11_food_3",
+          "category": "food",
+          "text": "ごま味噌の冷たいつけ汁でうどんを食べる",
+          "difficulty": 4
+        },
+        {
+          "id": "11_food_4",
+          "category": "food",
+          "text": "赤飯を饅頭の生地で包む「いがまんじゅう」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "12",
+      "facts": [
+        {
+          "id": "12_food_1",
+          "category": "food",
+          "text": "たたいた魚を味噌や薬味と合わせる「なめろう」",
+          "difficulty": 3
+        },
+        {
+          "id": "12_food_2",
+          "category": "food",
+          "text": "なめろうを焼いた料理を「さんが焼き」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "12_food_3",
+          "category": "food",
+          "text": "花の模様を切り口に作る「太巻き祭り寿司」",
+          "difficulty": 4
+        },
+        {
+          "id": "12_food_4",
+          "category": "food",
+          "text": "ラー油で炒めた玉ねぎ入りの辛いタンタンメンがある",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "13",
+      "facts": [
+        {
+          "id": "13_food_1",
+          "category": "food",
+          "text": "漁師料理から広まったあさり入りの「深川めし」",
+          "difficulty": 3
+        },
+        {
+          "id": "13_food_2",
+          "category": "food",
+          "text": "麹で漬けた大根を市で売る「べったら漬け」",
+          "difficulty": 4
+        },
+        {
+          "id": "13_food_3",
+          "category": "food",
+          "text": "島では白身魚を醤油漬けにし、からしで寿司を握る",
+          "difficulty": 4
+        },
+        {
+          "id": "13_food_4",
+          "category": "food",
+          "text": "強い香りを持つ発酵干物「くさや」が島の名物",
+          "difficulty": 4
+        },
+        {
+          "id": "13_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で過去1年間に漫画を読んだ人の割合が43.2％で全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "14",
+      "facts": [
+        {
+          "id": "14_food_1",
+          "category": "food",
+          "text": "炒めた肉と野菜の餡をのせる「サンマーメン」",
+          "difficulty": 4
+        },
+        {
+          "id": "14_food_2",
+          "category": "food",
+          "text": "小麦粉の薄い生地で餡を包む「へらへら団子」",
+          "difficulty": 4
+        },
+        {
+          "id": "14_food_3",
+          "category": "food",
+          "text": "山間部に具入りの生地を焼く「かんこ焼き」が伝わる",
+          "difficulty": 4
+        },
+        {
+          "id": "14_food_4",
+          "category": "food",
+          "text": "参詣客を支えた木綿ごしの「大山豆腐」",
+          "difficulty": 4
+        },
+        {
+          "id": "14_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で1日当たりの通勤・通学時間が1時間40分と全国最長",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "15",
+      "facts": [
+        {
+          "id": "15_food_1",
+          "category": "food",
+          "text": "焼きそばにミートソースをかける料理を「イタリアン」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "15_food_2",
+          "category": "food",
+          "text": "黒糖風味の細長い生地を焼く屋台菓子「ぽっぽ焼き」",
+          "difficulty": 4
+        },
+        {
+          "id": "15_food_3",
+          "category": "food",
+          "text": "里芋などを薄い醤油味で煮る「のっぺ」",
+          "difficulty": 3
+        },
+        {
+          "id": "15_food_4",
+          "category": "food",
+          "text": "つなぎに布海苔を使い、木の器に盛る「へぎそば」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "16",
+      "facts": [
+        {
+          "id": "16_food_1",
+          "category": "food",
+          "text": "溶き卵を寒天で固めた料理を「べっこう」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "16_food_2",
+          "category": "food",
+          "text": "茹でた青菜を味噌で和える料理を「よごし」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "16_food_3",
+          "category": "food",
+          "text": "刺身を昆布に挟んでうま味を移す「昆布締め」",
+          "difficulty": 3
+        },
+        {
+          "id": "16_food_4",
+          "category": "food",
+          "text": "漁船上で魚を味噌汁にする「かぶす汁」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "17",
+      "facts": [
+        {
+          "id": "17_food_1",
+          "category": "food",
+          "text": "オムライスに魚フライを添える「ハントンライス」",
+          "difficulty": 4
+        },
+        {
+          "id": "17_food_2",
+          "category": "food",
+          "text": "かぶにブリを挟んで発酵させる「かぶら寿し」",
+          "difficulty": 4
+        },
+        {
+          "id": "17_food_3",
+          "category": "food",
+          "text": "溶き卵を寒天で固める料理を「べろべろ」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "17_food_4",
+          "category": "food",
+          "text": "鴨肉と麩をとろみのある汁で煮る「じぶ煮」",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "18",
+      "facts": [
+        {
+          "id": "18_culture_1",
+          "category": "culture",
+          "text": "冬にこたつで水ようかんを食べる習慣がある",
+          "difficulty": 4
+        },
+        {
+          "id": "18_food_2",
+          "category": "food",
+          "text": "オムライスにカツをのせソースをかける「ボルガライス」",
+          "difficulty": 4
+        },
+        {
+          "id": "18_food_3",
+          "category": "food",
+          "text": "鯖をぬか漬けにした保存食「へしこ」",
+          "difficulty": 4
+        },
+        {
+          "id": "18_food_4",
+          "category": "food",
+          "text": "厚い油揚げを焼き、主役のおかずとして食べる",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "19",
+      "facts": [
+        {
+          "id": "19_food_1",
+          "category": "food",
+          "text": "非常に硬く太い麺へ茹でたキャベツを添える「吉田のうどん」",
+          "difficulty": 4
+        },
+        {
+          "id": "19_food_2",
+          "category": "food",
+          "text": "甘辛く煮た鶏の内臓を蕎麦店で食べる文化がある",
+          "difficulty": 4
+        },
+        {
+          "id": "19_food_3",
+          "category": "food",
+          "text": "海のない土地でアワビの煮貝が名物になった",
+          "difficulty": 4
+        },
+        {
+          "id": "19_food_4",
+          "category": "food",
+          "text": "小麦の生地を耳の形にして汁へ入れる「みみ」",
+          "difficulty": 4
+        },
+        {
+          "id": "19_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で長野県と並び、1日当たりの食事時間が全国最長",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "20",
+      "facts": [
+        {
+          "id": "20_food_1",
+          "category": "food",
+          "text": "野菜や餡を小麦生地で包んで焼く「おやき」",
+          "difficulty": 3
+        },
+        {
+          "id": "20_food_2",
+          "category": "food",
+          "text": "羊肉と太い蒸し麺を炒める「ローメン」",
+          "difficulty": 4
+        },
+        {
+          "id": "20_food_3",
+          "category": "food",
+          "text": "厚いパンにクリームを挟む「牛乳パン」が親しまれる",
+          "difficulty": 4
+        },
+        {
+          "id": "20_food_4",
+          "category": "food",
+          "text": "残りご飯を小麦粉と練って味噌を塗り焼く「こねつけ」",
+          "difficulty": 4
+        },
+        {
+          "id": "20_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で山梨県と並び、1日当たりの食事時間が全国最長",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "21",
+      "facts": [
+        {
+          "id": "21_food_1",
+          "category": "food",
+          "text": "漬物を炒めて卵でとじる「漬物ステーキ」",
+          "difficulty": 4
+        },
+        {
+          "id": "21_food_2",
+          "category": "food",
+          "text": "味付けした鶏肉を野菜と焼く料理を「鶏ちゃん」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "21_food_3",
+          "category": "food",
+          "text": "朴の葉で酢飯と具を包む「朴葉寿司」",
+          "difficulty": 4
+        },
+        {
+          "id": "21_industry_4",
+          "category": "industry",
+          "text": "郡上では食品サンプル作りが地場産業",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "22",
+      "facts": [
+        {
+          "id": "22_food_1",
+          "category": "food",
+          "text": "鰯などを丸ごとすり身にした灰色の「黒はんぺん」",
+          "difficulty": 4
+        },
+        {
+          "id": "22_food_2",
+          "category": "food",
+          "text": "卵をだし汁でふわりと仕上げる「たまごふわふわ」",
+          "difficulty": 4
+        },
+        {
+          "id": "22_food_3",
+          "category": "food",
+          "text": "醤油と酒だけで炊くご飯を「さくらごはん」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "22_food_4",
+          "category": "food",
+          "text": "黒い汁のおでんに魚粉と青のりをかける",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "23",
+      "facts": [
+        {
+          "id": "23_food_1",
+          "category": "food",
+          "text": "胡椒の効いた餡を太麺にかける「あんかけスパ」",
+          "difficulty": 4
+        },
+        {
+          "id": "23_food_2",
+          "category": "food",
+          "text": "「台湾ラーメン」は台湾ではなくこの地域で生まれた",
+          "difficulty": 4
+        },
+        {
+          "id": "23_culture_3",
+          "category": "culture",
+          "text": "喫茶店で飲み物に朝食が付くモーニング文化が盛ん",
+          "difficulty": 3
+        },
+        {
+          "id": "23_food_4",
+          "category": "food",
+          "text": "トーストに小倉餡を合わせる食べ方が定番",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "24",
+      "facts": [
+        {
+          "id": "24_food_1",
+          "category": "food",
+          "text": "太く柔らかい麺に濃いたれを絡める「伊勢うどん」",
+          "difficulty": 3
+        },
+        {
+          "id": "24_food_2",
+          "category": "food",
+          "text": "分厚い豚肉をにんにくソースで焼く「トンテキ」",
+          "difficulty": 4
+        },
+        {
+          "id": "24_food_3",
+          "category": "food",
+          "text": "漁師が作った、刺身をたれごと酢飯に混ぜる「てこね寿司」",
+          "difficulty": 4
+        },
+        {
+          "id": "24_food_4",
+          "category": "food",
+          "text": "餅の代わりに田ぶりあられを茶漬けに入れる",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "25",
+      "facts": [
+        {
+          "id": "25_food_1",
+          "category": "food",
+          "text": "刻んだたくあんをマヨネーズで和え、パンに挟む",
+          "difficulty": 4
+        },
+        {
+          "id": "25_food_2",
+          "category": "food",
+          "text": "鮒を米飯と塩で長期間発酵させる寿司がある",
+          "difficulty": 4
+        },
+        {
+          "id": "25_food_3",
+          "category": "food",
+          "text": "こんにゃくを三二酸化鉄で赤く染めて煮物に使う",
+          "difficulty": 4
+        },
+        {
+          "id": "25_food_4",
+          "category": "food",
+          "text": "小えびと大豆を甘辛く煮る「えび豆」",
+          "difficulty": 4
+        },
+        {
+          "id": "25_ranking_5",
+          "category": "ranking",
+          "text": "2022年度の県内総生産に占める製造業の割合が41.8％で全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "26",
+      "facts": [
+        {
+          "id": "26_food_1",
+          "category": "food",
+          "text": "油揚げと青ねぎを卵でとじた丼を「衣笠丼」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "26_food_2",
+          "category": "food",
+          "text": "甘辛く煮た身欠きにしんを温かい蕎麦にのせる",
+          "difficulty": 3
+        },
+        {
+          "id": "26_food_3",
+          "category": "food",
+          "text": "乳酸発酵で強い酸味を出す「すぐき漬け」",
+          "difficulty": 4
+        },
+        {
+          "id": "26_food_4",
+          "category": "food",
+          "text": "棒鱈と海老芋を炊き合わせる「いもぼう」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "27",
+      "facts": [
+        {
+          "id": "27_food_1",
+          "category": "food",
+          "text": "うどん抜きの肉うどんを「肉吸い」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "27_food_2",
+          "category": "food",
+          "text": "牛の小腸を揚げた油かすをうどんに入れる",
+          "difficulty": 4
+        },
+        {
+          "id": "27_food_3",
+          "category": "food",
+          "text": "紅しょうがを大きな一枚の天ぷらにする",
+          "difficulty": 4
+        },
+        {
+          "id": "27_food_4",
+          "category": "food",
+          "text": "果物と牛乳を混ぜた喫茶店のミックスジュース文化",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "28",
+      "facts": [
+        {
+          "id": "28_food_1",
+          "category": "food",
+          "text": "焼きそばとご飯を一緒に炒める「そばめし」",
+          "difficulty": 3
+        },
+        {
+          "id": "28_food_2",
+          "category": "food",
+          "text": "牛すじとこんにゃくの煮込みを「ぼっかけ」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "28_food_3",
+          "category": "food",
+          "text": "小魚を甘辛く炊く春の保存食「いかなごのくぎ煮」",
+          "difficulty": 4
+        },
+        {
+          "id": "28_food_4",
+          "category": "food",
+          "text": "おでんを生姜醤油で食べる地域がある",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "29",
+      "facts": [
+        {
+          "id": "29_food_1",
+          "category": "food",
+          "text": "牛乳と鶏肉を使う「飛鳥鍋」が伝わる",
+          "difficulty": 4
+        },
+        {
+          "id": "29_food_2",
+          "category": "food",
+          "text": "朝食に番茶で米を炊く「茶粥」を食べる文化がある",
+          "difficulty": 4
+        },
+        {
+          "id": "29_food_3",
+          "category": "food",
+          "text": "細い手延べ麺を門干しする「三輪そうめん」",
+          "difficulty": 3
+        },
+        {
+          "id": "29_food_4",
+          "category": "food",
+          "text": "塩鯖の寿司を柿の葉で一つずつ包む",
+          "difficulty": 3
+        },
+        {
+          "id": "29_ranking_5",
+          "category": "ranking",
+          "text": "2021年調査で6歳未満の子を持つ父親の家事関連時間が2時間35分と全国最長",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "30",
+      "facts": [
+        {
+          "id": "30_food_1",
+          "category": "food",
+          "text": "高菜の葉で大きなご飯を包む「めはり寿司」",
+          "difficulty": 3
+        },
+        {
+          "id": "30_food_2",
+          "category": "food",
+          "text": "ラーメンと一緒に小ぶりの「早寿司」を食べる",
+          "difficulty": 4
+        },
+        {
+          "id": "30_food_3",
+          "category": "food",
+          "text": "瓜や茄子も一緒に仕込むなめ味噌「金山寺味噌」",
+          "difficulty": 4
+        },
+        {
+          "id": "30_food_4",
+          "category": "food",
+          "text": "開いた秋刀魚を酢飯にのせる「さんまずし」",
+          "difficulty": 4
+        },
+        {
+          "id": "30_ranking_5",
+          "category": "ranking",
+          "text": "2014年経済センサスで人口10万人当たりのカラオケボックス数が全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "31",
+      "facts": [
+        {
+          "id": "31_food_1",
+          "category": "food",
+          "text": "牛骨でだしを取るラーメン文化がある",
+          "difficulty": 4
+        },
+        {
+          "id": "31_food_2",
+          "category": "food",
+          "text": "豆腐を混ぜた白いちくわ「とうふちくわ」",
+          "difficulty": 4
+        },
+        {
+          "id": "31_food_3",
+          "category": "food",
+          "text": "油揚げの中に生米と野菜を詰めて炊く「いただき」",
+          "difficulty": 4
+        },
+        {
+          "id": "31_food_4",
+          "category": "food",
+          "text": "豆腐を炒めた炊き込みご飯を「どんどろけ飯」と呼ぶ",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "32",
+      "facts": [
+        {
+          "id": "32_food_1",
+          "category": "food",
+          "text": "赤く着色した魚のすり身揚げ「赤てん」",
+          "difficulty": 4
+        },
+        {
+          "id": "32_food_2",
+          "category": "food",
+          "text": "茶筅で泡立て、漬物などを入れる「ぼてぼて茶」",
+          "difficulty": 4
+        },
+        {
+          "id": "32_food_3",
+          "category": "food",
+          "text": "具をご飯の下に隠してだしを注ぐ「うずめ飯」",
+          "difficulty": 4
+        },
+        {
+          "id": "32_food_4",
+          "category": "food",
+          "text": "板状に干したわかめを炙ってご飯に揉みかける",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "33",
+      "facts": [
+        {
+          "id": "33_food_1",
+          "category": "food",
+          "text": "黒いソースで炒めたご飯に海老をのせる「えびめし」",
+          "difficulty": 4
+        },
+        {
+          "id": "33_food_2",
+          "category": "food",
+          "text": "豚カツにデミグラスソースをかける「デミカツ丼」",
+          "difficulty": 3
+        },
+        {
+          "id": "33_food_3",
+          "category": "food",
+          "text": "酢漬けの小魚は「飯を借りるほど旨い」が名の由来",
+          "difficulty": 4
+        },
+        {
+          "id": "33_food_4",
+          "category": "food",
+          "text": "炊き込みご飯に酢を混ぜる料理を「どどめせ」と呼ぶ",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "34",
+      "facts": [
+        {
+          "id": "34_food_1",
+          "category": "food",
+          "text": "魚のすり身にパン粉をつけて揚げる「がんす」",
+          "difficulty": 4
+        },
+        {
+          "id": "34_food_2",
+          "category": "food",
+          "text": "具をご飯の下へ隠す料理を「うずみ」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "34_food_3",
+          "category": "food",
+          "text": "酒蔵で日本酒と鶏肉を使う「美酒鍋」が生まれた",
+          "difficulty": 4
+        },
+        {
+          "id": "34_food_4",
+          "category": "food",
+          "text": "花椒を効かせた汁なし担担麺がご当地料理",
+          "difficulty": 3
+        },
+        {
+          "id": "34_ranking_5",
+          "category": "ranking",
+          "text": "2016年調査でスポーツを会場で観戦した人の割合が32.9％で全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "35",
+      "facts": [
+        {
+          "id": "35_food_1",
+          "category": "food",
+          "text": "熱した瓦の上で茶そばと具を焼く",
+          "difficulty": 3
+        },
+        {
+          "id": "35_food_2",
+          "category": "food",
+          "text": "大根と豆腐を煮る家庭料理「けんちょう」",
+          "difficulty": 4
+        },
+        {
+          "id": "35_food_3",
+          "category": "food",
+          "text": "鶏肉とごぼうを甘辛く揚げ絡める給食発祥の料理",
+          "difficulty": 4
+        },
+        {
+          "id": "35_food_4",
+          "category": "food",
+          "text": "わらび粉を使う柔らかな外郎が作られる",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "36",
+      "facts": [
+        {
+          "id": "36_food_1",
+          "category": "food",
+          "text": "魚のすり身カツにカレー粉を効かせる",
+          "difficulty": 4
+        },
+        {
+          "id": "36_food_2",
+          "category": "food",
+          "text": "蕎麦の実を粒のまま汁物に入れる「そば米汁」",
+          "difficulty": 4
+        },
+        {
+          "id": "36_food_3",
+          "category": "food",
+          "text": "根菜を三杯酢で和える「ならえ」",
+          "difficulty": 4
+        },
+        {
+          "id": "36_food_4",
+          "category": "food",
+          "text": "一般的な手延べそうめんより太い「半田そうめん」",
+          "difficulty": 4
+        },
+        {
+          "id": "36_ranking_5",
+          "category": "ranking",
+          "text": "2024年調査で人口に対する社長輩出率が7年連続全国1位",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "37",
+      "facts": [
+        {
+          "id": "37_food_1",
+          "category": "food",
+          "text": "白味噌の雑煮にあん入り丸餅を入れる",
+          "difficulty": 4
+        },
+        {
+          "id": "37_food_2",
+          "category": "food",
+          "text": "そら豆を醤油だれに漬ける「しょうゆ豆」",
+          "difficulty": 4
+        },
+        {
+          "id": "37_food_3",
+          "category": "food",
+          "text": "鶏もも肉を骨付きのまま豪快に焼く",
+          "difficulty": 3
+        },
+        {
+          "id": "37_food_4",
+          "category": "food",
+          "text": "高菜の仲間を豆腐と炒める「まんばのけんちゃん」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "38",
+      "facts": [
+        {
+          "id": "38_food_1",
+          "category": "food",
+          "text": "鯛めしに炊き込み型と刺身をのせる型の二流派がある",
+          "difficulty": 4
+        },
+        {
+          "id": "38_food_2",
+          "category": "food",
+          "text": "小魚を骨ごとすりつぶして揚げる「じゃこ天」",
+          "difficulty": 3
+        },
+        {
+          "id": "38_food_3",
+          "category": "food",
+          "text": "白飯に薄切り焼豚と半熟目玉焼きをのせる",
+          "difficulty": 4
+        },
+        {
+          "id": "38_food_4",
+          "category": "food",
+          "text": "里芋を大鍋で煮て河川敷などで囲む「いもたき」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "39",
+      "facts": [
+        {
+          "id": "39_food_1",
+          "category": "food",
+          "text": "大皿に刺身・寿司・煮物を盛り合わせる「皿鉢料理」",
+          "difficulty": 3
+        },
+        {
+          "id": "39_food_2",
+          "category": "food",
+          "text": "土鍋で一人前ずつ作る「鍋焼きラーメン」",
+          "difficulty": 4
+        },
+        {
+          "id": "39_food_3",
+          "category": "food",
+          "text": "酢飯に筍やこんにゃくなど山の具をのせる「田舎寿司」",
+          "difficulty": 4
+        },
+        {
+          "id": "39_food_4",
+          "category": "food",
+          "text": "卵を使わずしゃりっと仕上げる氷菓「アイスクリン」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "40",
+      "facts": [
+        {
+          "id": "40_food_1",
+          "category": "food",
+          "text": "海藻を固めた「おきゅうと」を朝食で食べる",
+          "difficulty": 4
+        },
+        {
+          "id": "40_food_2",
+          "category": "food",
+          "text": "鯖の刺身をごま醤油で和える「ごまさば」",
+          "difficulty": 4
+        },
+        {
+          "id": "40_food_3",
+          "category": "food",
+          "text": "鶏だしのうどんを駅ホームで食べる文化がある",
+          "difficulty": 4
+        },
+        {
+          "id": "40_food_4",
+          "category": "food",
+          "text": "鶏肉と根菜の煮物を「がめ煮」と呼ぶ",
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "prefectureCode": "41",
+      "facts": [
+        {
+          "id": "41_food_1",
+          "category": "food",
+          "text": "ご飯に炒めた肉と野菜をのせ、マヨネーズをかける",
+          "difficulty": 4
+        },
+        {
+          "id": "41_food_2",
+          "category": "food",
+          "text": "冠婚葬祭で作る具だくさんの汁物を「だぶ」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "41_food_3",
+          "category": "food",
+          "text": "押し型で作る色鮮やかな箱寿司「須古寿し」",
+          "difficulty": 4
+        },
+        {
+          "id": "41_food_4",
+          "category": "food",
+          "text": "豆乳を葛などで固め、もちもちにする「呉豆腐」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "42",
+      "facts": [
+        {
+          "id": "42_food_1",
+          "category": "food",
+          "text": "海老のすり身を食パンで挟んで揚げる「ハトシ」",
+          "difficulty": 4
+        },
+        {
+          "id": "42_food_2",
+          "category": "food",
+          "text": "ミルクセーキを飲まずにスプーンで食べる",
+          "difficulty": 4
+        },
+        {
+          "id": "42_food_3",
+          "category": "food",
+          "text": "ピラフ・豚カツ・スパゲティを一皿に盛る",
+          "difficulty": 3
+        },
+        {
+          "id": "42_food_4",
+          "category": "food",
+          "text": "さつまいも澱粉の麺を「六兵衛」と呼ぶ",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "43",
+      "facts": [
+        {
+          "id": "43_food_1",
+          "category": "food",
+          "text": "春雨入りの中華風スープ「太平燕」が学校給食にも出る",
+          "difficulty": 4
+        },
+        {
+          "id": "43_food_2",
+          "category": "food",
+          "text": "さつまいもと餡を生地で包んで蒸す「いきなり団子」",
+          "difficulty": 3
+        },
+        {
+          "id": "43_food_3",
+          "category": "food",
+          "text": "蓮根の穴に辛子味噌を詰めて揚げる",
+          "difficulty": 3
+        },
+        {
+          "id": "43_food_4",
+          "category": "food",
+          "text": "分葱を茹でて巻き、酢味噌で食べる「ひともじのぐるぐる」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "44",
+      "facts": [
+        {
+          "id": "44_food_1",
+          "category": "food",
+          "text": "刺身を醤油・ごま・薬味に漬ける料理を「りゅうきゅう」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "44_food_2",
+          "category": "food",
+          "text": "平たい小麦団子にきな粉をまぶす「やせうま」",
+          "difficulty": 4
+        },
+        {
+          "id": "44_food_3",
+          "category": "food",
+          "text": "おからと魚を和える料理を「きらすまめし」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "44_food_4",
+          "category": "food",
+          "text": "焼いた魚のすり身を溶いただしで食べる「ごまだしうどん」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "45",
+      "facts": [
+        {
+          "id": "45_food_1",
+          "category": "food",
+          "text": "味噌を溶いた冷たい汁をご飯にかける「冷や汁」",
+          "difficulty": 3
+        },
+        {
+          "id": "45_food_2",
+          "category": "food",
+          "text": "豚肉でご飯を巻き、甘辛いたれを絡める",
+          "difficulty": 3
+        },
+        {
+          "id": "45_food_3",
+          "category": "food",
+          "text": "唐辛子とにんにくを効かせ、溶き卵で仕上げる麺料理",
+          "difficulty": 4
+        },
+        {
+          "id": "45_food_4",
+          "category": "food",
+          "text": "魚のすり身に豆腐や黒砂糖を混ぜる「飫肥天」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "46",
+      "facts": [
+        {
+          "id": "46_food_1",
+          "category": "food",
+          "text": "鶏肉をほぐし、錦糸卵などと鶏だしをかける「鶏飯」",
+          "difficulty": 4
+        },
+        {
+          "id": "46_food_2",
+          "category": "food",
+          "text": "山芋とうるち米粉で作る白い蒸し菓子「かるかん」",
+          "difficulty": 4
+        },
+        {
+          "id": "46_food_3",
+          "category": "food",
+          "text": "灰汁に浸したもち米を竹皮で包む「あくまき」",
+          "difficulty": 4
+        },
+        {
+          "id": "46_food_4",
+          "category": "food",
+          "text": "地酒を使って発酵させる「酒ずし」",
+          "difficulty": 4
+        }
+      ]
+    },
+    {
+      "prefectureCode": "47",
+      "facts": [
+        {
+          "id": "47_culture_1",
+          "category": "culture",
+          "text": "大きな茶筅で泡を立てる「ブクブクー茶」",
+          "difficulty": 4
+        },
+        {
+          "id": "47_food_2",
+          "category": "food",
+          "text": "薄切りの豚肉加工品と卵焼きをおにぎりに挟む",
+          "difficulty": 3
+        },
+        {
+          "id": "47_food_3",
+          "category": "food",
+          "text": "豚肉や昆布を入れる炊き込みご飯を「ジューシー」と呼ぶ",
+          "difficulty": 4
+        },
+        {
+          "id": "47_food_4",
+          "category": "food",
+          "text": "甘い白味噌仕立ての豚汁「イナムドゥチ」",
+          "difficulty": 4
+        }
+      ]
+    }
+  ]
+}

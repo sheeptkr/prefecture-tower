@@ -10,11 +10,18 @@ export default defineConfig({
     baseURL: `http://127.0.0.1:4173${basePath}`,
     trace: 'on-first-retry',
   },
-  webServer: {
-    command: 'npm run preview -- --host 127.0.0.1',
-    port: 4173,
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+    {
+      command: 'npm run preview -- --host 127.0.0.1',
+      port: 4173,
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command: 'npm run dev:worker -- --ip 127.0.0.1',
+      port: 8787,
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
   projects: [
     { name: 'mobile-390x844', use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 }, hasTouch: true } },
     { name: 'desktop-1280x720', use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 720 } } },

@@ -2,11 +2,45 @@ import { readFileSync } from 'node:fs';
 import Matter from 'matter-js';
 import { describe, expect, it } from 'vitest';
 import { createPiece, piecePoint, PrefectureTowerGame } from '../src/game';
+import { BATTLE_PLATFORM_WIDTH_SCALE } from '../src/constants';
 import type { PrefectureAssetCollection } from '../src/types';
 
 const data = JSON.parse(readFileSync(new URL('../public/assets/prefectures.json', import.meta.url), 'utf8')) as PrefectureAssetCollection;
+const hints = JSON.parse(readFileSync(new URL('../public/assets/prefecture-hints.json', import.meta.url), 'utf8')) as {
+  records: Array<{ prefectureCode: string; facts: Array<{ id: string; category: string; text: string; difficulty: number }> }>;
+};
 
 describe('generated prefecture assets', () => {
+  it('has multiple non-name attack hints for all prefectures', () => {
+    expect(hints.records.map((entry) => entry.prefectureCode)).toEqual(data.assets.map((asset) => asset.code));
+    for (const entry of hints.records) {
+      const asset = data.assets.find((candidate) => candidate.code === entry.prefectureCode)!;
+      expect(entry.facts.length).toBeGreaterThanOrEqual(4);
+      expect(new Set(entry.facts.map((fact) => fact.id)).size).toBe(entry.facts.length);
+      expect(entry.facts.every((fact) => fact.text.length > 4 && !fact.text.includes(asset.nameJa))).toBe(true);
+      expect(entry.facts.every((fact) => fact.difficulty >= 3)).toBe(true);
+    }
+  });
+
+  it('keeps every single hint text unique to one prefecture', () => {
+    const owners = new Map<string, string[]>();
+    for (const entry of hints.records) {
+      for (const fact of entry.facts) {
+        owners.set(fact.text, [...(owners.get(fact.text) ?? []), entry.prefectureCode]);
+      }
+    }
+    expect([...owners.entries()].filter(([, codes]) => codes.length !== 1)).toEqual([]);
+  });
+
+  it('uses difficult local-trivia categories instead of mechanical or textbook hints', () => {
+    const categories = new Set(['landmark', 'food', 'festival', 'culture', 'history', 'nature', 'industry', 'ranking']);
+    const bannedPhrases = ['地方区分', '保持陸地面積', '外接形状', '同一縮尺', '県庁所在地', '世界遺産', '日本三景', '日本三名園'];
+    const facts = hints.records.flatMap((entry) => entry.facts);
+    expect(facts.every((fact) => categories.has(fact.category))).toBe(true);
+    expect(facts.every((fact) => bannedPhrases.every((phrase) => !fact.text.includes(phrase)))).toBe(true);
+    expect(facts.filter((fact) => fact.category === 'ranking')).toHaveLength(11);
+  });
+
   it('contains one asset for every JIS prefecture code', () => {
     expect(data.assets.map((asset) => asset.code)).toEqual(Array.from({ length: 47 }, (_, index) => String(index + 1).padStart(2, '0')));
   });
@@ -51,6 +85,15 @@ describe('generated prefecture assets', () => {
 });
 
 describe('game rules', () => {
+  it('keeps the solo platform width and halves it only for battle mode', () => {
+    const solo = new PrefectureTowerGame(data, 1);
+    const battle = new PrefectureTowerGame(data, 1, { platformWidthScale: BATTLE_PLATFORM_WIDTH_SCALE });
+    expect(BATTLE_PLATFORM_WIDTH_SCALE).toBe(0.5);
+    expect(battle.platformWidth).toBeCloseTo(solo.platformWidth / 2, 10);
+    expect(battle.platformThickness).toBe(solo.platformThickness);
+    expect(battle.deathLineY).toBe(solo.deathLineY);
+  });
+
   it('uses stronger gravity with no rigid-body bounce', () => {
     const game = new PrefectureTowerGame(data, 1);
     const piece = createPiece(data.assets[0]!, { x: 0, y: -300 }, 0);

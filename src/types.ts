@@ -95,3 +95,12 @@ export type GameSnapshot = {
   seed: number;
   records: PersistedRecords;
 };
+
+export type SerializedPiece = {
+  prefectureCode: string;
+  position: Vec2;
+  angle: number;
+  velocity: Vec2;
+  angularVelocity: number;
+  isSleeping: boolean;
+};

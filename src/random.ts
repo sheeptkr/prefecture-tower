@@ -14,8 +14,8 @@ export function normalizeSeed(value: string | null): number {
 export class SeededRandom {
   private state: number;
 
-  constructor(readonly seed: number) {
-    this.state = seed >>> 0;
+  constructor(readonly seed: number, state = seed) {
+    this.state = state >>> 0;
   }
 
   next(): number {
@@ -28,5 +28,9 @@ export class SeededRandom {
 
   integer(maxExclusive: number): number {
     return Math.floor(this.next() * maxExclusive);
+  }
+
+  snapshot(): number {
+    return this.state;
   }
 }

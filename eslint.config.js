@@ -3,7 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist/**', '.cache/**', 'public/assets/prefectures.json'] },
+  { ignores: ['dist/**', 'dist-worker/**', '.cache/**', '.wrangler/**', 'public/assets/prefectures.json'] },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {

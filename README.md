@@ -1,6 +1,6 @@
 # 都道府県タワー
 
-実際の面積・距離関係を保った47都道府県を積み上げる、1人用のWeb物理ゲームです。Vite、TypeScript、Matter.js 0.20、独自Canvas 2Dレンダラーで構築しています。
+実際の面積・距離関係を保った47都道府県を積み上げるWeb物理ゲームです。従来の1人用に加え、招待URLで友達と遊べるオンライン2人対戦を収録しています。Vite、TypeScript、Matter.js 0.20、独自Canvas 2Dレンダラーで構築しています。
 
 [ブラウザで都道府県タワーを遊ぶ](https://sheeptkr.github.io/prefecture-tower/)
 
@@ -24,6 +24,18 @@ npm install
 npm run dev
 ```
 
+オンライン対戦を試す場合は、別のターミナルでCloudflare Workerを起動します。
+
+```sh
+npm run dev:worker
+```
+
+Viteはローカル環境では自動的に`http://localhost:8787`、公開ビルドでは既定のCloudflare Workerを対戦APIとして使います。任意のWorkerへ接続する場合は、Vite起動時に`VITE_BATTLE_API_URL`を設定してください。
+
+```sh
+VITE_BATTLE_API_URL=https://prefecture-tower-battle.example.workers.dev npm run dev
+```
+
 生成済みの`public/assets/prefectures.json`をコミットしているため、ゲーム実行時に外部APIへアクセスしません。
 
 ```sh
@@ -31,8 +43,36 @@ npm run lint
 npm test
 npm run data:validate
 npm run build
+npm run build:worker
 npm run test:e2e
 ```
+
+## オンライン対戦
+
+- Room IDは紛らわしい文字を除いた6文字で、アカウント登録は不要です。
+- 2人揃うとseed付き乱数で先攻を決め、1つのタワーへ交互に積みます。
+- 対戦では判断と崩れやすさを高めるため、台の横幅を1人用の50%にします。
+- 1手は10秒。期限時はサーバーが現在の位置・角度で自動DROPします。
+- DROP後は両ブラウザで1人用と同じ固定60Hzの落下経過を描画し、落下が完了してから次の10秒手番を開始します。
+- 10県到達後、5県ごとに直前のプレイヤーが5秒の「県送り」を行います。時間切れはサーバーseedから4候補の1つを選びます。
+- 一時切断は同じブラウザに保存したreconnect tokenで30秒間再接続できます。通常手番と県送りの時計は止まりません。
+- 決着後は両プレイヤーが「もう一度対戦」を選ぶと、同じRoom ID・接続のまま盤面をリセットして次の試合を開始できます。
+- 手番外入力、範囲外座標、任意角度、候補外カード、期限後入力はサーバー側で受理しません。
+
+### 状態と物理の同期
+
+正しいRoom、手番、配置入力、期限、県抽選、県送り、勝敗、RNG状態はRoomごとのDurable Objectが管理します。Matter.jsをDOで常時60Hz動かすことはせず、DROP確定時だけ既存ゲームと同じ固定60Hz・最大300tickの物理計算をまとめて実行します。確定した全bodyの位置、角度、速度、sleep状態を1回だけ両クライアントへ送り、クライアントはそのスナップショットを描画します。
+
+両ブラウザだけの決定論的再生はブラウザ差と再接続時のずれが残り、操作側ブラウザを正とする方式は改ざんに弱く、常時サーバー計算はCPUと通信を浪費します。DROP時バースト計算は既存のMatter.js挙動を再利用しつつ、1手あたりの通信を入力イベントと確定スナップショットに限定できるため採用しています。詳細は[対戦アーキテクチャ](docs/battle-architecture.md)を参照してください。
+
+### Cloudflareへのデプロイ
+
+1. `wrangler.jsonc`の`ALLOWED_ORIGIN`を実際のGitHub Pages originへ合わせる。
+2. `npx wrangler login`後、`npx wrangler deploy`を実行する。初回はSQLite-backed Durable Object `BattleRoom`のmigration `v1`も適用される。
+3. GitHubリポジトリのActions variable `BATTLE_API_URL`へ、デプロイされたWorker URLを登録する。
+4. `main`へpushし、既存Pages workflowでフロントを配信する。
+
+Workerは外部DB、AI API、常時稼働VMを使いません。Room状態はDurable Object内の小さなJSONだけで、ゲーム終了後または無操作1時間後に破棄できます。料金・無料枠はCloudflare側で変更され得るため、公開前にアカウントの現在のlimitsを確認してください。
 
 ## 形状データの再生成
 

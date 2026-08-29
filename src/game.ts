@@ -1,7 +1,7 @@
 import Matter from 'matter-js';
 import { loadRecords, saveRecords } from './storage';
 import { SeededRandom } from './random';
-import type { GamePhase, GameSnapshot, PrefectureAsset, PrefectureAssetCollection, Vec2 } from './types';
+import type { GamePhase, GameSnapshot, PrefectureAsset, PrefectureAssetCollection, SerializedPiece, Vec2 } from './types';
 
 const { Bodies, Body, Composite, Engine, Sleeping } = Matter;
 const fixedStepMs = 1000 / 60;
@@ -24,6 +24,10 @@ export type Placement = {
   asset: PrefectureAsset;
   anchor: Vec2;
   angle: number;
+};
+
+export type GameOptions = {
+  platformWidthScale?: number;
 };
 
 function polygonCentroid(vertices: Vec2[]): Vec2 {
@@ -113,12 +117,13 @@ export class PrefectureTowerGame {
   private readonly random: SeededRandom;
   private readonly platform: Matter.Body;
 
-  constructor(readonly data: PrefectureAssetCollection, seed: number) {
+  constructor(readonly data: PrefectureAssetCollection, seed: number, options: GameOptions = {}) {
     this.seed = seed;
     this.random = new SeededRandom(seed);
-    this.platformWidth = Math.max(...data.assets.map((asset) => asset.mainBounds.width)) * 1.1;
-    this.platformThickness = this.platformWidth * 0.05;
-    this.deathLineY = this.platformWidth * 0.9;
+    const basePlatformWidth = Math.max(...data.assets.map((asset) => asset.mainBounds.width)) * 1.1;
+    this.platformWidth = basePlatformWidth * (options.platformWidthScale ?? 1);
+    this.platformThickness = basePlatformWidth * 0.05;
+    this.deathLineY = basePlatformWidth * 0.9;
     this.engine.gravity.x = 0;
     this.engine.gravity.y = 1;
     this.engine.gravity.scale = 0.0018;
@@ -164,6 +169,58 @@ export class PrefectureTowerGame {
     this.phase = 'placing';
     this.settleMs = 0;
     this.dropElapsedMs = 0;
+  }
+
+  prepareAsset(asset: PrefectureAsset, x = 0, angle = 0): void {
+    this.resetPlacement(asset);
+    this.placement.anchor.x = x;
+    this.placement.angle = angle;
+  }
+
+  loadBoard(pieces: SerializedPiece[]): void {
+    const existingBodies = [
+      ...this.placed.map((piece) => piece.body),
+      ...(this.activePiece ? [this.activePiece.body] : []),
+    ];
+    for (const body of existingBodies) Composite.remove(this.engine.world, body);
+    this.placed.length = 0;
+    this.activePiece = null;
+    for (const state of pieces) {
+      const asset = this.data.assets.find((candidate) => candidate.code === state.prefectureCode);
+      if (!asset) throw new Error(`Unknown prefecture code: ${state.prefectureCode}`);
+      const piece = createPiece(asset, { x: 0, y: 0 }, 0);
+      Body.setPosition(piece.body, state.position);
+      Body.setAngle(piece.body, state.angle);
+      Body.setVelocity(piece.body, state.velocity);
+      Body.setAngularVelocity(piece.body, state.angularVelocity);
+      piece.body.sleepThreshold = settledBodySleepThreshold;
+      Sleeping.set(piece.body, state.isSleeping);
+      this.placed.push(piece);
+      Composite.add(this.engine.world, piece.body);
+    }
+    this.score = pieces.length;
+    this.heightKm = this.measureHeight();
+  }
+
+  serializeBoard(includeActive = true): SerializedPiece[] {
+    const pieces = [...this.placed, ...(includeActive && this.activePiece ? [this.activePiece] : [])];
+    return pieces.map((piece) => ({
+      prefectureCode: piece.asset.code,
+      position: { x: piece.body.position.x, y: piece.body.position.y },
+      angle: piece.body.angle,
+      velocity: { x: piece.body.velocity.x, y: piece.body.velocity.y },
+      angularVelocity: piece.body.angularVelocity,
+      isSleeping: piece.body.isSleeping,
+    }));
+  }
+
+  resolveDrop(maximumSteps = 300): number {
+    if (this.phase === 'placing') this.drop();
+    let completedSteps = 0;
+    for (; completedSteps < maximumSteps && this.phase !== 'placing' && this.phase !== 'gameOver'; completedSteps += 1) {
+      this.update();
+    }
+    return completedSteps * fixedStepMs;
   }
 
   move(direction: -1 | 1): void {
