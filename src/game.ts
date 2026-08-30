@@ -6,7 +6,10 @@ import type { GamePhase, GameSnapshot, PrefectureAsset, PrefectureAssetCollectio
 const { Bodies, Body, Composite, Engine, Sleeping } = Matter;
 const fixedStepMs = 1000 / 60;
 const settleDurationMs = 350;
-const dropTimeoutMs = 5_000;
+// A drop may take longer than the placement timer. Keep simulating it until it
+// settles, and use this only as a deterministic safety guard for pathological
+// physics states. Never carry a moving body into the next turn.
+const dropTimeoutMs = 15_000;
 const linearSleepThreshold = 0.45;
 const angularSleepThreshold = 0.03;
 const maximumUpwardContactSpeed = 0.35;
@@ -191,10 +194,13 @@ export class PrefectureTowerGame {
       const piece = createPiece(asset, { x: 0, y: 0 }, 0);
       Body.setPosition(piece.body, state.position);
       Body.setAngle(piece.body, state.angle);
-      Body.setVelocity(piece.body, state.velocity);
-      Body.setAngularVelocity(piece.body, state.angularVelocity);
+      // A serialized board is a completed-turn snapshot. Older online rooms
+      // could contain residual velocity after the former five-second cutoff;
+      // restoring that velocity made pieces resume during the next drop.
+      Body.setVelocity(piece.body, { x: 0, y: 0 });
+      Body.setAngularVelocity(piece.body, 0);
       piece.body.sleepThreshold = settledBodySleepThreshold;
-      Sleeping.set(piece.body, state.isSleeping);
+      Sleeping.set(piece.body, true);
       this.placed.push(piece);
       Composite.add(this.engine.world, piece.body);
     }
@@ -262,10 +268,13 @@ export class PrefectureTowerGame {
     this.dropElapsedMs += fixedStepMs;
 
     const hasSupport = this.hasActiveContact(piece);
+    const allPiecesAreSlow = [...this.placed, piece].every((candidate) => (
+      candidate.body.speed < linearSleepThreshold
+      && Math.abs(candidate.body.angularSpeed) < angularSleepThreshold
+    ));
     const isStable = hasSupport
       && this.hasBalancedSupport(piece)
-      && piece.body.speed < linearSleepThreshold
-      && Math.abs(piece.body.angularSpeed) < angularSleepThreshold;
+      && allPiecesAreSlow;
     if (isStable) {
       this.phase = 'settling';
       this.settleMs += fixedStepMs;
@@ -275,17 +284,26 @@ export class PrefectureTowerGame {
     }
 
     const hasTimedOut = this.dropElapsedMs >= dropTimeoutMs - 1e-6;
-    if (this.settleMs >= settleDurationMs || hasTimedOut) {
-      const canSleep = hasSupport
-        && piece.body.speed < linearSleepThreshold
-        && Math.abs(piece.body.angularSpeed) < angularSleepThreshold;
-      this.completeDrop(piece, canSleep);
+    if (this.settleMs >= settleDurationMs) {
+      this.completeDrop(piece);
+    } else if (hasTimedOut) {
+      if (hasSupport) this.completeDrop(piece);
+      else {
+        this.phase = 'gameOver';
+        this.commitRecords();
+      }
     }
   }
 
-  private completeDrop(piece: Piece, sleep: boolean): void {
-    piece.body.sleepThreshold = settledBodySleepThreshold;
-    if (sleep) Sleeping.set(piece.body, true);
+  private completeDrop(piece: Piece): void {
+    // Turn hand-off invariant: every committed body is motionless. This keeps
+    // the next player's drop from reactivating an earlier player's piece.
+    for (const settled of [...this.placed, piece]) {
+      Body.setVelocity(settled.body, { x: 0, y: 0 });
+      Body.setAngularVelocity(settled.body, 0);
+      settled.body.sleepThreshold = settledBodySleepThreshold;
+      Sleeping.set(settled.body, true);
+    }
     this.placed.push(piece);
     this.activePiece = null;
     this.score += 1;

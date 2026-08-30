@@ -141,19 +141,19 @@ describe('game rules', () => {
     expect(piece.body.sleepThreshold).toBe(60);
   });
 
-  it('advances after five seconds even when the active piece never reaches support', () => {
+  it('does not advance the turn while the active piece has not reached support', () => {
     const game = new PrefectureTowerGame(data, 1);
     game.engine.gravity.scale = 0;
     game.drop();
-    const piece = game.activePiece!;
-    for (let frame = 0; frame < 299; frame += 1) game.update();
+    for (let frame = 0; frame < 300; frame += 1) game.update();
     expect(game.score).toBe(0);
     expect(game.phase).toBe('falling');
-    game.update();
-    expect(game.score).toBe(1);
-    expect(game.phase).toBe('placing');
-    expect(game.placed[0]).toBe(piece);
-    expect(piece.body.isSleeping).toBe(false);
+    expect(game.activePiece).not.toBeNull();
+
+    for (let frame = 300; frame < 900; frame += 1) game.update();
+    expect(game.score).toBe(0);
+    expect(game.phase).toBe('gameOver');
+    expect(game.placed).toHaveLength(0);
   });
 
   it('ends when an already placed main-land anchor crosses the death line', () => {

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { BATTLE_ATTACK_REVEAL_MS, BATTLE_TURN_TIME_MS } from '../src/constants';
 import { BattleStateMachine, shouldStartAttack } from '../src/battle/state';
 import { resolveAuthoritativeDrop } from '../src/battle/physics';
+import { PrefectureTowerGame } from '../src/game';
 import type { PrefectureHints } from '../src/battle/state';
 import type { PrefectureAssetCollection, SerializedPiece } from '../src/types';
 
@@ -35,6 +36,25 @@ describe('battle state machine', () => {
     expect(second.board[0]!.position.x).toBeCloseTo(first.board[0]!.position.x, 10);
     expect(second.board[0]!.position.y).toBeCloseTo(first.board[0]!.position.y, 10);
     expect(second.board[0]!.angle).toBeCloseTo(first.board[0]!.angle, 10);
+    expect(first.board[0]!.velocity).toEqual({ x: 0, y: 0 });
+    expect(first.board[0]!.angularVelocity).toBe(0);
+    expect(first.board[0]!.isSleeping).toBe(true);
+  });
+
+  it('removes residual velocity when restoring a completed-turn board', () => {
+    const game = new PrefectureTowerGame(data, 77);
+    game.loadBoard([{ ...piece(0), velocity: { x: 8, y: 12 }, angularVelocity: 2, isSleeping: false }]);
+
+    const [restored] = game.serializeBoard();
+    expect(restored).toMatchObject({
+      prefectureCode: piece(0).prefectureCode,
+      angle: 0,
+      velocity: { x: 0, y: 0 },
+      angularVelocity: 0,
+      isSleeping: true,
+    });
+    expect(restored!.position.x).toBe(0);
+    expect(restored!.position.y).toBe(0);
   });
 
   it('starts with a seeded first player and alternates after a safe drop', () => {
@@ -92,6 +112,25 @@ describe('battle state machine', () => {
     expect(battle.state.phase).toBe('placing');
     expect(battle.state.turn).toBe(turn === 1 ? 2 : 1);
     expect(battle.state.deadline).toBe(2_200 + BATTLE_TURN_TIME_MS);
+  });
+
+  it('does not let the next player act before the server commits the drop result', () => {
+    const battle = started();
+    const droppingPlayer = battle.state.turn!;
+    const nextPlayer = droppingPlayer === 1 ? 2 : 1;
+    battle.requestDrop(droppingPlayer, 1_100);
+    battle.stageDrop(1_000, 1_200);
+
+    expect(battle.move(nextPlayer, 1, 2_100)).toBe(false);
+    expect(battle.requestDrop(nextPlayer, 2_100)).toBe(false);
+    expect(battle.expire(2_200)).toBe('dropResolved');
+    expect(battle.state.phase).toBe('dropping');
+    expect(battle.requestDrop(nextPlayer, 2_200)).toBe(false);
+
+    battle.completeDrop([piece(0)], 42, false, 2_200);
+    expect(battle.state.phase).toBe('placing');
+    expect(battle.state.turn).toBe(nextPlayer);
+    expect(battle.requestDrop(nextPlayer, 2_201)).toBe(true);
   });
 
   it('starts an attack at 10 and each following 5 prefectures', () => {
